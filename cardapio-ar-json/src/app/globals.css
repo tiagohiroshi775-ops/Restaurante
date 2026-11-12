@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background: #14110f;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-carvao font-sans text-corpo text-marfim antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-medium;
+  }
+  :focus-visible {
+    outline: 2px solid #d9c29a;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primario {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-botao bg-champagne px-6 text-center font-medium text-carvao transition-colors duration-200 hover:bg-champagne-forte disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-secundario {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-botao border border-champagne/60 px-6 text-center font-medium text-champagne transition-colors duration-200 hover:bg-champagne/10 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .card {
+    @apply rounded-card border border-linha bg-grafite;
+  }
+  .campo {
+    @apply min-h-[48px] w-full rounded-botao border border-linha bg-carvao px-4 text-marfim placeholder:text-marfim-suave/70 focus:border-champagne focus:outline-none;
+  }
+}
+
+/* Quem prefere menos movimento não vê as animações do Animate.css */
+@media (prefers-reduced-motion: reduce) {
+  .animate__animated {
+    animation-duration: 1ms !important;
+    animation-delay: 0s !important;
+  }
+}
